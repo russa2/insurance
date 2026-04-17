@@ -16,6 +16,7 @@ import {
   CheckCircle2,
   XCircle,
   Info,
+  Printer,
 } from "lucide-react";
 import * as mammoth from "mammoth";
 
@@ -429,7 +430,7 @@ export default function App() {
       ? result.citations
       : result.citations.slice(0, 2);
     return (
-      <div className={`min-h-screen ${meta.bg} ${meta.text}`}>
+      <div className={`min-h-screen ${meta.bg} ${meta.text} print-results`}>
         <div className="max-w-3xl mx-auto p-6 sm:p-10">
           <div className="flex items-center gap-3 mb-4 opacity-90">
             <Icon className="w-10 h-10" />
@@ -528,13 +529,20 @@ export default function App() {
             )}
           </div>
 
-          <div className="mt-6 flex flex-wrap gap-3">
+          <div className="mt-6 flex flex-wrap gap-3 print:hidden">
             <button
               onClick={reset}
               className="bg-white/20 hover:bg-white/30 backdrop-blur px-5 py-2.5 rounded-lg font-semibold flex items-center gap-2"
             >
               <RotateCcw className="w-4 h-4" />
               Check another claim
+            </button>
+            <button
+              onClick={() => window.print()}
+              className="bg-white/20 hover:bg-white/30 backdrop-blur px-5 py-2.5 rounded-lg font-semibold flex items-center gap-2"
+            >
+              <Printer className="w-4 h-4" />
+              Print results
             </button>
             <button
               onClick={startOver}
