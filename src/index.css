@@ -15,3 +15,28 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+/* Print stylesheet — makes the results page printer-friendly. */
+@media print {
+  .print-results {
+    background: #fff !important;
+    color: #111 !important;
+  }
+  .print-results * {
+    color: #111 !important;
+  }
+  .print-results .bg-white\/15,
+  .print-results .backdrop-blur {
+    background: #f3f4f6 !important;
+    backdrop-filter: none !important;
+  }
+  .print-results .bg-white {
+    background: #fff !important;
+    box-shadow: none !important;
+    border: 1px solid #e5e7eb;
+  }
+  .print-results blockquote {
+    color: #111 !important;
+  }
+}
+
